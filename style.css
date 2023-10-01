@@ -1,3 +1,41 @@
-h1{
-    color : blue;
+body{
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#text-container{
+    position: relative;
+    top: 10%;
+    left: 40%;
+}
+
+.box1{
+    position: relative;
+    top: 20%;
+    left: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:red;
+    width: 150px;
+    height: 150px;
+    font-size: 30px;
+    animation-name: example;
+    animation-duration: 4s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+}
+#text-container{
+    font-size: 60px;
+    font-family: cursive;
+}
+
+@keyframes example{
+    0%   {background-color:red; left:40%; top:20%;}
+    25%  {background-color:yellow; left:60%; top:20%;}
+    50%  {background-color:blue; left:60%; top:40%;}
+    75%  {background-color:green; left:40%; top:40%;}
+    100% {background-color:red; left:40%; top:20%;}
 }
