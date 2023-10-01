@@ -1,4 +1,6 @@
 body{
+    background-image: url('assets/stars-1436950_1280.jpg');
+    background-size: cover;
     width: 100vw;
     height: 100vh;
     overflow: hidden;
@@ -23,11 +25,12 @@ body{
     font-size: 30px;
     animation-name: example;
     animation-duration: 4s;
-    animation-iteration-count: 1;
+    animation-iteration-count: infinite;
     animation-direction: normal;
     animation-fill-mode: forwards;
 }
 #text-container{
+    color: wheat;
     font-size: 60px;
     font-family: cursive;
 }
