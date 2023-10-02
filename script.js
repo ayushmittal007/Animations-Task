@@ -1,4 +1,12 @@
-const text = "Hello, World!";
+let arr = ["Hello Ayush" , "Hello Aman", "Hello Aryan" , "Hello Aviral","Hello Jatin"]
+
+function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min)) + min;
+}
+let idx = getRandomInt(0,5)
+const text = `${arr[idx]}`;
 const outputElement = document.getElementById("output");
 
 function displayLetters(text) {
@@ -10,7 +18,11 @@ function displayLetters(text) {
     } else {
       clearInterval(interval);
     }
-  }, 240); 
+  }, 100); 
 }
 
 displayLetters(text);
+
+let btn_click = document.getElementById("btn").addEventListener('click', function() {
+    window.location.reload();
+  });
