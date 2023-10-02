@@ -8,50 +8,33 @@ body{
 
 #text-container{
     position: relative;
-    top: 10%;
-    left: 40%;
-}
-
-#btn_container{
-    position: relative;
-    top: 10%;
-    left: 20%;
-}
-
-#btn{
-    cursor: pointer;
-    height: 40px;
-    width: 100px;
-    background-color: green;
-}
-
-.box1{
-    position: relative;
-    top: 20%;
-    left: 40%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color:red;
-    width: 150px;
-    height: 150px;
-    font-size: 30px;
-    animation-name: example;
-    animation-duration: 4s;
-    animation-iteration-count: 1;
-    animation-direction: normal;
-    animation-fill-mode: forwards;
-}
-#text-container{
+    top: 15%;
+    left: 39%;
     color: wheat;
     font-size: 60px;
     font-family: cursive;
 }
 
-@keyframes example{
-    /* 0%   {background-color:red; left:40%; top:20%;} */
-    25%  {background-color:yellow; left:60%; top:20%;}
-    50%  {background-color:blue; left:60%; top:40%;}
-    75%  {background-color:green; left:40%; top:40%;}
-    100% {background-color:red; left:40%; top:20%;}
+#btn {
+    background-color: rgb(178, 11, 184);
+    color: rgba(240, 248, 255, 0.808);
+    padding: 12px 25px;
+    font-size: 22px;
+    margin-top: 15vh;
+    cursor: pointer;
+    top : 25%;
+    left: 0; 
+    border-radius: 15px;
+    animation: btn_movement 2s ease-in-out forwards;
+    position: relative; 
+}
+
+@keyframes btn_movement{
+    0% {
+        left: 0;
+    }
+    100% {
+        left: 50%;
+        transform: translateX(-50%); 
+    }
 }

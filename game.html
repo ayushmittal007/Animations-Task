@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game</title>
+    <style>
+        body{
+            overflow: hidden;
+            margin: 0px;
+            width: 100vw;
+            height: 100vh;
+            background-color:#ed425e;
+            /* background: #ED4264;  
+            background: -webkit-linear-gradient(to right, #FFEDBC, #ED4264);
+            background: linear-gradient(to right, #FFEDBC, #ED4264); */
+
+            position: relative;
+        }
+        #score{
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            z-index: 2;
+        }
+        #message{
+            font-size: 40px;
+            font-family: cursive;
+            margin : 5px;
+            text-align: center;
+            color: #1b1b1b;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="message">Collect the coin before they Disappear</div>
+    <div id="root">
+        <h1 id="score">Score : 0</h1>
+    </div>
+    <script>
+        let root = document.getElementById("root");
+        let scoreHeading = document.getElementById("score");
+        let score = 0;
+        
+        setInterval(function(){
+            let image = document.createElement("img");
+            image.setAttribute("src", "https://en.numista.com/catalogue/photos/inde/3255-original.jpg");
+            image.style.setProperty("height", "70px");
+            image.style.setProperty("position", "absolute");
+            image.style.setProperty("border-radius", "50%");
+            let left = Math.floor(Math.random() * (window.innerWidth - 100) + 50);
+
+            let top = Math.floor(Math.random() * (window.innerHeight - 100) + 50);
+
+            image.style.setProperty("left", `${left}px`);
+            image.style.setProperty("top", `${top}px`);
+            root.appendChild(image);
+
+            let available = true;
+            setTimeout(function(){
+                if(available){
+                    root.removeChild(image);
+                }
+            }, 2000);
+
+
+            image.addEventListener('click',function(){
+                root.removeChild(image);
+                available = false;
+                score += 10;
+                scoreHeading.innerHTML = `Score : ${score}`;
+            });
+        }, 400);
+
+    </script>
+</body>
+
+</html>
