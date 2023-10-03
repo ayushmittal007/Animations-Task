@@ -12,7 +12,6 @@
             width: 100vw;
             height: 100vh;
             background-color:#ee536a;;
-
             position: relative;
         }
         #score{
@@ -68,7 +67,7 @@
                 newWindow.onload = function() {
                 newWindow.postMessage(dataToSend, '*');
                 };
-            }, 5000);
+            }, 15000);
 
             image.addEventListener('click',function(){
                 root.removeChild(image);
@@ -76,9 +75,7 @@
                 score += 10;
                 scoreHeading.innerHTML = `Score : ${score}`;
             });
-        }, 400);
-
+        },400);
     </script>
 </body>
-
 </html>
