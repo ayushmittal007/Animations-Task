@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameOver</title>
+    <style>
+        html{
+            height: 100vh;
+            width: 100vw;
+            background-color: #1b1b11;
+            display: flex;
+            justify-content: center;
+        }
+        p,div{
+            color: wheat;
+            font-family: cursive;
+            font-size: 80px ;
+        }
+        p{
+            margin-left: 10px;
+        }
+        #scoreView{
+            color : wheat;
+            font-size: 70px;
+        }
+        #btn {
+            margin-left: 40px;
+            background-color: rgb(178, 11, 184);
+            color: rgba(240, 248, 255, 0.808);
+            position: relative; 
+            padding: 12px 25px;
+            font-size: 22px;
+            cursor: pointer;
+            border-radius: 15px;
+        }
+    </style>
+</head>
+<body>
+        <p>
+            GameOver!
+        </p>
+    <p id="scoreView"></p>
+    <button id = "btn">Click Here To Play Again</button>
+    <script>
+        window.addEventListener('message', function(event) {
+        var receivedData = event.data;
+        var outputScore = document.getElementById('scoreView');
+        outputScore.textContent = receivedData;
+        });
+
+        let btn_click = document.getElementById("btn").addEventListener('click', function() {
+            window.open("game.html","_blank");
+        });
+    </script>
+</body>
+</html>

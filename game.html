@@ -11,10 +11,7 @@
             margin: 0px;
             width: 100vw;
             height: 100vh;
-            background-color:#ed425e;
-            /* background: #ED4264;  
-            background: -webkit-linear-gradient(to right, #FFEDBC, #ED4264);
-            background: linear-gradient(to right, #FFEDBC, #ED4264); */
+            background-color:#ee536a;;
 
             position: relative;
         }
@@ -25,7 +22,7 @@
             z-index: 2;
         }
         #message{
-            font-size: 40px;
+            font-size: 38px;
             font-family: cursive;
             margin : 5px;
             text-align: center;
@@ -35,7 +32,7 @@
 </head>
 
 <body>
-    <div id="message">Collect the coin before they Disappear</div>
+    <div id="message">Click on the coins to collect the coin before they Disappear</div>
     <div id="root">
         <h1 id="score">Score : 0</h1>
     </div>
@@ -65,6 +62,13 @@
                 }
             }, 2000);
 
+            setTimeout(function(){
+                var dataToSend = `Your Score is ${score}`;
+                var newWindow = window.open('gameover.html', '_blank');
+                newWindow.onload = function() {
+                newWindow.postMessage(dataToSend, '*');
+                };
+            }, 5000);
 
             image.addEventListener('click',function(){
                 root.removeChild(image);
